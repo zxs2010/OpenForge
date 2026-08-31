@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1",
+  "id": "community.moneyprinter-turbo",
+  "slug": "moneyprinter-turbo",
+  "name": "MoneyPrinterTurbo",
+  "status": "adapter-ready",
+  "integration": "http",
+  "capabilities": [
+    "video.generate"
+  ],
+  "upstream": {
+    "repository": "harry0703/MoneyPrinterTurbo",
+    "ref": "v1.3.5",
+    "license": "MIT"
+  },
+  "operations": {
+    "estimate_cost": "unavailable-upstream",
+    "create_job": "implemented-process-local-idempotency",
+    "get_status": "implemented",
+    "cancel_job": "unsupported-upstream",
+    "get_result": "implemented"
+  }
+}

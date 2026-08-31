@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "id": "community.comfyui",
+  "slug": "comfyui",
+  "name": "ComfyUI",
+  "status": "candidate",
+  "integration": "http-websocket",
+  "capabilities": [
+    "image.generate",
+    "video.generate",
+    "workflow.execute"
+  ],
+  "upstream": {
+    "repository": "Comfy-Org/ComfyUI",
+    "ref": "v0.34.0",
+    "license": "GPL-3.0"
+  },
+  "operations": {
+    "estimate_cost": "adapter-planned",
+    "create_job": "adapter-planned",
+    "get_status": "adapter-planned",
+    "cancel_job": "adapter-planned",
+    "get_result": "adapter-planned"
+  }
+}

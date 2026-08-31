@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "id": "community.videolingo",
+  "slug": "videolingo",
+  "name": "VideoLingo",
+  "status": "candidate",
+  "integration": "cli",
+  "capabilities": [
+    "audio.dub",
+    "subtitle.generate",
+    "video.localize"
+  ],
+  "upstream": {
+    "repository": "Huanshere/VideoLingo",
+    "ref": "v3.0.1",
+    "license": "Apache-2.0"
+  },
+  "operations": {
+    "estimate_cost": "adapter-planned",
+    "create_job": "adapter-planned",
+    "get_status": "adapter-planned",
+    "cancel_job": "adapter-planned",
+    "get_result": "adapter-planned"
+  }
+}

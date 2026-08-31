@@ -26,6 +26,21 @@ a pull request.
 4. Update the relevant specification text and note compatibility concerns.
 5. Open a pull request that explains the problem and the chosen approach.
 
+## Adding a community provider
+
+1. Add `providers/<slug>/provider.json` with the upstream GitHub repository,
+   pinned release or commit, license, capabilities, and honest operation status.
+2. Add a short README describing the boundary between OpenForge and upstream.
+3. Implement the `ProductionProvider` interface without copying upstream code.
+4. Use recorded, secret-free responses for offline adapter tests.
+5. Keep real-provider tests opt-in and read credentials only from environment
+   variables.
+6. Document missing cancellation, estimates, idempotency, or receipts rather
+   than simulating support.
+
+An adapter can be useful before it is fully conformant, but its limitations
+must remain machine-readable in the provider manifest.
+
 Protocol proposals should use normative language only where conformance can be
 tested. New fields should be optional or versioned unless a breaking version is
 being proposed.

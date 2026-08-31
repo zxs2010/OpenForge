@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "id": "community.openmontage",
+  "slug": "openmontage",
+  "name": "OpenMontage",
+  "status": "candidate",
+  "integration": "agent-checkpoint",
+  "capabilities": [
+    "video.generate",
+    "video.localize",
+    "video.transform"
+  ],
+  "upstream": {
+    "repository": "calesthio/OpenMontage",
+    "ref": "cd9f3c1f03368be87b140af494914b8ee4e3c7a4",
+    "license": "AGPL-3.0"
+  },
+  "operations": {
+    "estimate_cost": "mapping-designed",
+    "create_job": "adapter-planned",
+    "get_status": "checkpoint-mapping-designed",
+    "cancel_job": "adapter-planned",
+    "get_result": "checkpoint-mapping-designed"
+  }
+}

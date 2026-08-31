@@ -10,4 +10,10 @@ build/
 coverage/
 __pycache__/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.coverage
+htmlcov/
+*.egg-info/
 *.log

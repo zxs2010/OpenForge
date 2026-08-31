@@ -15,8 +15,9 @@ design, games, software, and other production work.
 ## Project status
 
 OpenForge is **pre-alpha**. The repository currently defines the vision, the
-first protocol draft, and the boundaries for future reference implementations.
-No API should be considered stable yet.
+first protocol draft, a dependency-free Python SDK, a machine-readable community
+provider catalog, and the first runnable adapter. No API should be considered
+stable yet.
 
 ## How it fits together
 
@@ -51,7 +52,50 @@ network.
 - **Receipt** — an auditable record of usage, price, provenance, and result.
 
 Read [the vision](docs/vision.md) for the product direction and
-[Protocol v0.1](docs/protocol-v0.1.md) for the first interoperability draft.
+[Protocol v0.1](docs/protocol-v0.1.md) for the first interoperability draft. The
+[community validation plan](docs/community-validation.md) explains how existing
+open-source projects become providers without being copied into the core.
+
+## Try the community catalog
+
+Python 3.10 or newer is required.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+openforge providers list
+openforge providers inspect moneyprinter-turbo
+```
+
+The first catalog contains MoneyPrinterTurbo, OpenMontage, ComfyUI, and
+VideoLingo. Entries pin an upstream release or immutable commit and record the
+license and current adapter status.
+
+## Run the first real adapter
+
+Start a separately installed MoneyPrinterTurbo v1.3.5 API service, then submit
+the same provider-neutral request through OpenForge:
+
+```bash
+openforge jobs create \
+  --provider moneyprinter-turbo \
+  --request-id community-demo-001 \
+  --brief "Create a 15-second vertical product launch video" \
+  --aspect-ratio 9:16 \
+  --duration 15 \
+  --language zh-CN
+```
+
+Use the returned task ID to inspect state and retrieve the final artifact:
+
+```bash
+openforge jobs status --provider moneyprinter-turbo --job-id TASK_ID
+openforge jobs result --provider moneyprinter-turbo --job-id TASK_ID
+```
+
+The upstream API key, when enabled, is read only from the
+`MONEYPRINTER_TURBO_API_KEY` environment variable.
 
 ## Repository map
 
@@ -63,6 +107,7 @@ examples/     End-to-end examples
 providers/    Production-provider adapters
 sdk/          SDKs and shared protocol types
 skills/       Reusable production skills and manifests
+tests/        Contract, adapter, CLI, and security behavior tests
 ```
 
 ## Contributing
