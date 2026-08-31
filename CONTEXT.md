@@ -10,7 +10,8 @@ concepts; they do not prescribe storage, transport, or user-interface details.
 - **Definition:** Any discoverable entity that can request, contribute,
   distribute, or execute work in the network.
 - **Examples:** A person, AI agent, project, skill, production provider, compute
-  resource, or distribution channel.
+  resource, distribution channel, creator, aesthetic reviewer, musician,
+  scriptwriter, or AI content system.
 - **Related:** Connector, Capability, Participant, Network Index.
 - **Avoid:** Resource (too narrow), account (implies ownership or login), vendor
   (excludes people and community projects).
@@ -28,7 +29,8 @@ concepts; they do not prescribe storage, transport, or user-interface details.
 ### Capability
 
 - **Definition:** A stable label for something a node can contribute or perform.
-- **Examples:** `video.generate`, `script.write`, `channel.distribute`.
+- **Examples:** `video.generate`, `script.write`, `music.compose`,
+  `social.publish`, `mtv.produce`, `channel.distribute`.
 - **Related:** Node, Intent, Match.
 - **Avoid:** Skill as a synonym; a Skill is a node that packages reusable
   expertise, while a Capability is what any node declares.
@@ -56,6 +58,17 @@ concepts; they do not prescribe storage, transport, or user-interface details.
 - **Examples:** “Launch OpenForge V1,” “Make a 15-second product video.”
 - **Related:** Match, Activity, Capability.
 - **Avoid:** Job; an Intent can require several participants and jobs.
+
+### Content Field
+
+- **Definition:** An open-ended label describing the kind of content an Intent
+  or Activity aims to create.
+- **Examples:** Story, script, music, voice, podcast, comic drama, film,
+  advertising, AI MTV/MV, self-media, game, interactive narrative, virtual
+  character, design.
+- **Related:** Intent, Activity, Capability, Artifact.
+- **Avoid:** Vertical when it implies a closed business silo; marketplace
+  category when it implies that only pre-listed forms are welcome.
 
 ### Match
 
@@ -104,7 +117,8 @@ concepts; they do not prescribe storage, transport, or user-interface details.
 
 - **Definition:** A durable output reference produced or attached during an
   Activity or Job.
-- **Examples:** Video URL, repository commit, campaign brief, review document.
+- **Examples:** Script draft, music master, podcast episode, video URL, AI MTV,
+  social post, repository commit, campaign brief, review document.
 - **Related:** Event, Job, Receipt.
 - **Avoid:** Result when referring only to a file; an outcome can also be a
   decision or verified learning.

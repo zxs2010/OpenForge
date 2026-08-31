@@ -12,7 +12,7 @@
   --saffron: #d8a236;
   --dark: #202824;
   --page: min(100% - 48px, 1540px);
-  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color-scheme: light;
 }
 
@@ -104,6 +104,18 @@ form > small { display: block; margin-top: 10px; color: var(--muted); line-heigh
 .ledger li span { margin-top: 4px; font-size: .68rem; line-height: 1.4; }
 .ledger > a { align-self: flex-start; margin-top: auto; font-size: .76rem; font-weight: 850; }
 
+.manifesto { width: var(--page); margin: auto; padding: 112px 0; display: grid; grid-template-columns: minmax(320px,.9fr) minmax(460px,1.1fr); gap: clamp(70px,10vw,170px); border-bottom: 1px solid var(--ink); }
+.manifesto h2 { max-width: 8ch; margin: 0 0 34px; font: 400 clamp(3rem,5.4vw,6.3rem)/.92 "Newsreader", Georgia, serif; letter-spacing: -.045em; }
+.manifesto-thesis > p { max-width: 62ch; margin: 0 0 20px; color: var(--muted); line-height: 1.75; }
+.manifesto-thesis .manifesto-lead { max-width: 18ch; color: var(--ink); font: 400 clamp(1.75rem,2.8vw,3.2rem)/1.14 "Newsreader", Georgia, serif; letter-spacing: -.025em; }
+.content-spectrum { align-self: end; border-top: 1px solid var(--ink); }
+.content-spectrum h3 { max-width: 15ch; margin: 28px 0 36px; font: 400 clamp(2rem,3.4vw,3.8rem)/1 "Newsreader", Georgia, serif; letter-spacing: -.03em; }
+.content-spectrum ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.content-spectrum li { min-height: 62px; padding: 14px 0; display: grid; grid-template-columns: 88px 1fr; gap: 20px; align-items: center; border-bottom: 1px solid var(--rule); }
+.content-spectrum li span { color: var(--blue); font: 800 .65rem monospace; letter-spacing: .08em; }
+.content-spectrum li strong { font-size: .84rem; line-height: 1.5; }
+.content-spectrum > p { margin: 22px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.6; }
+
 .draft-activity { width: var(--page); margin: 26px auto 0; padding: 34px; background: var(--blue); color: white; display: grid; grid-template-columns: 1fr 1fr auto; gap: 40px; align-items: center; }
 .draft-activity > div:first-child > span { font-size: .64rem; font-weight: 850; letter-spacing: .08em; }
 .draft-activity h2 { margin: 8px 0; font: 400 2rem "Newsreader", Georgia, serif; }
@@ -157,6 +169,8 @@ footer p { color: var(--muted); font-size: .72rem; }
   .masthead { grid-template-columns: 1fr auto; }.masthead nav { display: none; }.source-link { font-size: .68rem; }
   .workbench { display: block; }.intent-sheet { padding: 54px 0 48px; }.routing-field { margin: 0; }.ledger { margin-top: 18px; padding: 38px 26px; }
   .draft-activity { grid-template-columns: 1fr; }.draft-activity > a { grid-column: auto; }
+  .manifesto { grid-template-columns: 1fr; gap: 60px; padding: 82px 0; }
+  .manifesto h2 { max-width: 10ch; }
   .network, .connect, .protocol { padding: 82px 0; }.section-head { display: block; }.counts { margin-top: 24px; }
   .node-row { grid-template-columns: 1fr auto; padding: 16px 0; }.node-row > :nth-child(3) { grid-column: 1/-1; }.node-row.headings { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
   .connect, .protocol { grid-template-columns: 1fr; gap: 56px; }
@@ -167,6 +181,8 @@ footer p { color: var(--muted); font-size: .72rem; }
   h1 { font-size: clamp(3rem,14vw,4.4rem); }.routing-field, .ledger { margin-inline: -11px; }.routing-field { padding: 22px; }
   .route-stage { min-height: 440px; }.route-nodes { width: 48%; }.intent-token { width: 58px; }.ready { left: 61px; max-width: 132px; }
   .draft-activity { width: 100%; margin-top: 12px; padding: 28px 22px; }
+  .manifesto { padding: 72px 0; }
+  .content-spectrum li { grid-template-columns: 72px 1fr; gap: 12px; }
   .node-row > :nth-child(2) { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
   .connect { width: 100%; }.connect > div:first-child { padding-inline: 11px; }.join-sheet { padding: 26px 22px; }
   .protocol pre { margin-inline: -11px; padding: 22px; }

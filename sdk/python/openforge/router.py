@@ -12,13 +12,39 @@ _STATUS_WEIGHT = {
 }
 
 _KEYWORD_CAPABILITIES: tuple[tuple[tuple[str, ...], str], ...] = (
-    (("video", "漫剧", "视频", "短片", "广告"), "video.generate"),
+    (("video", "mtv", "ai mv", "漫剧", "视频", "短片", "电影", "动画", "广告"), "video.generate"),
+    (
+        ("script", "story", "storyboard", "剧本", "故事", "分镜", "世界观"),
+        "script.write",
+    ),
+    (
+        ("music", "song", "soundtrack", "音乐", "歌曲", "配乐", "虚拟歌手"),
+        "music.compose",
+    ),
+    (
+        ("podcast", "self-media", "social media", "播客", "自媒体", "图文", "直播"),
+        "social.publish",
+    ),
     (("subtitle", "字幕"), "subtitle.generate"),
     (("dub", "配音"), "audio.dub"),
     (("localize", "翻译", "本地化"), "video.localize"),
     (("gpu", "compute", "算力"), "compute.provide"),
     (("distribute", "channel", "渠道", "分发", "推广"), "channel.distribute"),
-    (("launch", "openforge", "community", "社区", "开放", "发布"), "community.coordinate"),
+    (
+        (
+            "launch",
+            "openforge",
+            "community",
+            "create",
+            "make",
+            "社区",
+            "开放",
+            "创作",
+            "制作",
+            "发布",
+        ),
+        "community.coordinate",
+    ),
 )
 
 

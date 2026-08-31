@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "OpenForge — Open production for everyone",
   description:
-    "OpenForge connects needs, people, AI, projects, channels, providers, and compute into visible creative activities.",
+    "OpenForge is an open collaboration network for AI-native content, connecting needs, creators, AI, tools, compute, projects, and channels.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OpenForge — Open production for everyone",
     description:
-      "Route a real need through an open network and turn the connection into a visible activity.",
+      "Bring a need for scripts, music, video, self-media, or the next creative format. The open network assembles.",
     type: "website",
   },
 };

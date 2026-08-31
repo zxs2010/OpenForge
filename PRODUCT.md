@@ -2,10 +2,10 @@
 
 ## Product
 
-OpenForge is an open connection layer for creative production. It helps a real
-need find compatible people, AI agents, projects, channels, skills, providers,
-and compute, then turns those connections into a visible activity with an
-auditable outcome.
+OpenForge is an open collaboration network for AI-native content production. It
+helps a real need find compatible people, AI agents, projects, tools, channels,
+providers, and compute, then turns those connections into a visible activity
+with an auditable outcome.
 
 Its unique mechanism is a public flow from **node → intent → match → activity →
 receipt**. OpenForge coordinates the flow; independent systems keep their own
@@ -21,6 +21,18 @@ repositories, identities, interfaces, and business models.
   real project and show who contributed what.
 - A community operator needs a shared activity room rather than another static
   directory of links.
+- A writer, musician, filmmaker, self-media creator, designer, or person with
+  useful taste wants to collaborate across disciplines without joining one
+  closed production platform.
+
+## Open content fields
+
+OpenForge is deliberately a broad content network. Scriptwriting, stories,
+storyboards, music, voice, podcasts, comic drama, short film, advertising,
+animation, AI MTV/MV, self-media, games, interactive narrative, virtual
+characters, design, branding, and commerce content are examples—not a fixed
+taxonomy. New AI- or tool-assisted forms should be able to enter through the
+same Node, Intent, Activity, Artifact, and Receipt model.
 
 ## First release promise
 
@@ -37,8 +49,10 @@ other participant.
 ## Positioning
 
 OpenForge is not a video generator, a Skill store, an Agent store, a token, or a
-centrally controlled marketplace. Those can emerge as nodes or community
-projects later. The first product is the shared connection and activity layer.
+centrally controlled marketplace. It is also not a bundle of isolated content
+verticals. Those tools, markets, and specialist communities can emerge as nodes
+or community projects later. The first product is the shared connection and
+activity layer across every content field.
 
 ## Technical commitments
 
@@ -57,9 +71,20 @@ projects later. The first product is the shared connection and activity layer.
 **Name:** OpenForge
 
 **Line:** Open production for everyone.
-**Voice:** direct, collaborative, concrete, and technically honest. Explain the
-opportunity in human language; expose protocol detail when it helps someone
-connect.
+
+**Chinese line:** 让每一个有想法的人，都能组织起自己的创作力量。
+
+**Mission:** Connect needs, people, AI, tools, compute, projects, and channels
+so independent participants can complete real creative activities together.
+
+**Vision:** Make studio-grade creative organization accessible to anyone, and
+reduce dependence on a few closed production institutions without replacing
+them with another gatekeeper.
+
+**Voice:** ambitious, inviting, direct, concrete, and technically honest.
+Explain the human possibility first; expose protocol detail when it helps
+someone connect. Speak with conviction about the mission while distinguishing
+the network we are building from evidence already achieved.
 
 The experience should feel like an active civic exchange for production—not a
 corporate SaaS dashboard and not a speculative crypto market. It should show the

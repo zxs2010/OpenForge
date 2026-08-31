@@ -2,18 +2,25 @@
 
 ## The purpose
 
-Film, advertising, media, and digital production are becoming networked, but
-the ability to organize that production is still concentrated in closed
-platforms and large intermediaries. A single outcome may need a person with
-taste, an AI agent, a production project, a model API, local GPU capacity,
-human review, and a distribution channel. Today these pieces are hard to
-discover together and usually bound by one operator's product and economics.
+Film, advertising, music, publishing, self-media, games, and digital production
+are becoming AI-native and networked, but the ability to organize that
+production is still concentrated in closed platforms and large intermediaries.
+A single outcome may need a person with taste, a writer, a musician, an AI
+agent, a production project, a model API, local GPU capacity, human review, and
+a distribution channel. Today these pieces are hard to discover together and
+usually bound by one operator's product and economics.
 
 OpenForge makes the connection layer open.
 
 The long-term ambition is to let small teams and communities organize work at a
 level previously available mainly to Hollywood studios, major advertising
 groups, and large platforms—without replacing one monopoly with another.
+
+OpenForge is therefore not an AI video platform with extra categories attached.
+It is shared infrastructure for any content that people, AI, and tools can make
+together: scripts and stories, music and voice, comic drama and film, AI
+MTV/MV, self-media and podcasts, games and interactive worlds, design and
+future formats the community has not named yet.
 
 ## The core business logic
 
@@ -32,6 +39,8 @@ activity to justify them.
 ## What the network connects
 
 - people, including ordinary people with useful judgment or taste;
+- writers, musicians, directors, designers, editors, publishers, and
+  cross-disciplinary creators;
 - AI agents and autonomous systems;
 - independent projects and open-source production tools;
 - reusable skills and aesthetic samples;
@@ -39,6 +48,9 @@ activity to justify them.
 - local and hosted compute;
 - publishing, sales, and distribution channels;
 - requests, artifacts, reviews, costs, and outcomes.
+
+Content fields are examples, not gates. A new form should not require a new
+platform: it should enter through the same open connection and activity model.
 
 A node can remain in its own repository and under its own license, interface,
 and business model.

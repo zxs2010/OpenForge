@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="OpenForge connects needs, people, AI, projects, channels, providers, and compute into visible creative activities.">
+    <meta name="description" content="OpenForge is an open collaboration network for AI-native content, connecting needs, creators, AI, tools, compute, projects, and channels.">
     <title>OpenForge — Open production for everyone</title>
     <link rel="stylesheet" href="/assets/styles.css">
     <script src="/assets/app.js" defer></script>
@@ -25,6 +25,7 @@
       </a>
       <p>Open production for everyone.</p>
       <nav aria-label="Primary navigation">
+        <a href="#about">What it is</a>
         <a href="#network">Network</a>
         <a href="#activities">Activities</a>
         <a href="#connect">Connect</a>
@@ -40,13 +41,13 @@
             <span>INTENT / OPEN</span>
             <span>V0.1</span>
           </div>
-          <h1 id="workbench-title">Tell the network what should happen.</h1>
-          <p class="intro-copy" lang="zh-CN">把真实需求放进来。OpenForge 会公开匹配理由，并把连接变成一个可追踪的活动。</p>
+          <h1 id="workbench-title">The open network for AI-native content.</h1>
+          <p class="intro-copy" lang="zh-CN">OpenForge 是一个开放的 AI 泛内容协作网络：把需求、创作者、AI、工具、算力与渠道组织成一次真实活动。</p>
           <form id="intent-form">
             <label for="intent-summary">Desired outcome</label>
-            <textarea id="intent-summary" name="summary" rows="5" maxlength="2000" required>Open and validate OpenForge V1 with a real production activity</textarea>
+            <textarea id="intent-summary" name="summary" rows="5" maxlength="2000" required>Create and release an AI music video with an original song</textarea>
             <label for="intent-capabilities">Capabilities, if known</label>
-            <input id="intent-capabilities" name="capabilities" maxlength="500" value="community.coordinate" placeholder="video.generate, channel.distribute">
+            <input id="intent-capabilities" name="capabilities" maxlength="500" placeholder="music.compose, video.generate, channel.distribute">
             <button class="primary-action" type="submit">
               <span>Route this intent</span>
               <svg viewBox="0 0 28 16" aria-hidden="true"><path d="M1 8h23M18 2l6 6-6 6"/></svg>
@@ -100,6 +101,26 @@
           <ol class="event-preview" id="activity-001-timeline"></ol>
           <button class="text-action" type="button" data-open-activity="activity:001">Open activity room <span aria-hidden="true">→</span></button>
         </aside>
+      </section>
+
+      <section class="manifesto-section" id="about" aria-labelledby="about-title">
+        <div class="manifesto-thesis">
+          <h2 id="about-title">What is OpenForge?</h2>
+          <p class="manifesto-lead" lang="zh-CN">让每一个有想法的人，都能组织起自己的创作力量。</p>
+          <p lang="zh-CN">它不是又一个 AI 工具商店，也不只是一套视频软件。你带来一个想法或任务，OpenForge 帮它找到可能需要的人、AI、项目、工具、算力与渠道，再把这些连接组织成一次看得见、可参与、可追踪的真实活动。</p>
+          <p>Bring a need. The network assembles. Independent participants keep their identity, tools, repositories, and business models.</p>
+        </div>
+        <div class="content-spectrum">
+          <h3>Scripts. Music. Video. Media. Whatever comes next.</h3>
+          <ol>
+            <li><span>WRITE</span><strong lang="zh-CN">剧本 · 故事 · 分镜 · 世界观</strong></li>
+            <li><span>SOUND</span><strong lang="zh-CN">音乐 · 配乐 · 声音 · 播客</strong></li>
+            <li><span>MOTION</span><strong lang="zh-CN">漫剧 · 电影 · 广告 · AI MTV / MV</strong></li>
+            <li><span>PUBLISH</span><strong lang="zh-CN">自媒体 · 短视频 · 图文 · 频道</strong></li>
+            <li><span>EXPLORE</span><strong lang="zh-CN">游戏 · 互动内容 · 虚拟角色 · 新形式</strong></li>
+          </ol>
+          <p>Starting points, not limits. If people, AI, or tools can help make it, it belongs in the conversation.</p>
+        </div>
       </section>
 
       <section class="network-section" id="network" aria-labelledby="network-title">
@@ -184,8 +205,8 @@
         </div>
         <pre aria-label="OpenForge API example"><code><span>POST</span> /api/v1/intents
 {
-  "summary": "Create a 15-second comic-drama trailer",
-  "desired_capabilities": ["video.generate"]
+  "summary": "Create an AI music video",
+  "desired_capabilities": ["music.compose", "video.generate"]
 }</code></pre>
       </section>
     </main>

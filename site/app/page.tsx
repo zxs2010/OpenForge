@@ -22,7 +22,7 @@ type NetworkNode = {
 
 const nodes: NetworkNode[] = [
   { id: "ai.openforge-router", name: "OpenForge Router", kind: "ai", summary: "Explainable intent-to-capability matching.", capabilities: ["intent.route", "community.coordinate"], connection: "connected" },
-  { id: "project.openforge", name: "OpenForge", kind: "project", summary: "Open connection and activity layer.", capabilities: ["network.index", "activity.host", "community.coordinate"], connection: "connected", url: "https://github.com/zxs2010/OpenForge" },
+  { id: "project.openforge", name: "OpenForge", kind: "project", summary: "Open collaboration network for AI-native content.", capabilities: ["network.index", "activity.host", "community.coordinate"], connection: "connected", url: "https://github.com/zxs2010/OpenForge" },
   { id: "channel.openforge-github", name: "OpenForge on GitHub", kind: "channel", summary: "Public source and contribution channel.", capabilities: ["code.host", "channel.distribute"], connection: "connected", url: "https://github.com/zxs2010/OpenForge" },
   { id: "community.moneyprinter-turbo", name: "MoneyPrinterTurbo", kind: "provider", summary: "Runnable video-provider adapter.", capabilities: ["video.generate"], connection: "connected", url: "https://github.com/harry0703/MoneyPrinterTurbo" },
   { id: "community.comfyui", name: "ComfyUI", kind: "provider", summary: "Imported community provider candidate.", capabilities: ["image.generate", "video.generate", "workflow.execute"], connection: "imported", url: "https://github.com/Comfy-Org/ComfyUI" },
@@ -99,7 +99,7 @@ export default function Home() {
         <a className="wordmark" href="#route"><span className="registration-mark" aria-hidden="true" />OPENFORGE</a>
         <p>Open production for everyone.</p>
         <nav aria-label="Primary navigation">
-          <a href="#network">Network</a><a href="#activity">Activity 001</a><a href="#connect">Connect</a>
+          <a href="#about">What it is</a><a href="#network">Network</a><a href="#activity">Activity 001</a><a href="#connect">Connect</a>
         </nav>
         <a className="source-link" href="https://github.com/zxs2010/OpenForge">GitHub source</a>
       </header>
@@ -108,13 +108,13 @@ export default function Home() {
         <section className="workbench" id="route" aria-labelledby="route-title">
           <div className="intent-sheet">
             <div className="sheet-meta"><span>INTENT / OPEN</span><span>PUBLIC DEMO</span></div>
-            <h1 id="route-title">Bring a need. Leave with a network.</h1>
-            <p className="intro" lang="zh-CN">把项目、人、AI、渠道与算力连接起来。需求先进入，市场和工具可以由社区后来生长。</p>
+            <h1 id="route-title">The open network for AI-native content.</h1>
+            <p className="intro" lang="zh-CN">OpenForge 是一个开放的 AI 泛内容协作网络：把需求、创作者、AI、工具、算力与渠道组织成一次真实活动。</p>
             <form onSubmit={routeIntent}>
               <label htmlFor="summary">Desired outcome</label>
-              <textarea id="summary" name="summary" rows={4} defaultValue="Open and validate OpenForge V1 with a real production activity" required />
+              <textarea id="summary" name="summary" rows={4} defaultValue="Create and release an AI music video with an original song" required />
               <label htmlFor="capabilities">Capabilities, if known</label>
-              <input id="capabilities" name="capabilities" defaultValue="community.coordinate" placeholder="video.generate, channel.distribute" />
+              <input id="capabilities" name="capabilities" placeholder="music.compose, video.generate, channel.distribute" />
               <button className="route-action" type="submit" disabled={routing}>{routing ? "Reading the network…" : "Route this intent"}<span aria-hidden="true">→</span></button>
               <small>This public demo does not save your text. The open-source node provides the full API.</small>
             </form>
@@ -155,6 +155,26 @@ export default function Home() {
           </aside>
         </section>
 
+        <section className="manifesto" id="about" aria-labelledby="about-title">
+          <div className="manifesto-thesis">
+            <h2 id="about-title">What is OpenForge?</h2>
+            <p className="manifesto-lead" lang="zh-CN">让每一个有想法的人，都能组织起自己的创作力量。</p>
+            <p lang="zh-CN">它不是又一个 AI 工具商店，也不只是一套视频软件。你带来一个想法或任务，OpenForge 帮它找到可能需要的人、AI、项目、工具、算力与渠道，再把这些连接组织成一次看得见、可参与、可追踪的真实活动。</p>
+            <p>Bring a need. The network assembles. Independent participants keep their identity, tools, repositories, and business models.</p>
+          </div>
+          <div className="content-spectrum">
+            <h3>Scripts. Music. Video. Media. Whatever comes next.</h3>
+            <ol>
+              <li><span>WRITE</span><strong lang="zh-CN">剧本 · 故事 · 分镜 · 世界观</strong></li>
+              <li><span>SOUND</span><strong lang="zh-CN">音乐 · 配乐 · 声音 · 播客</strong></li>
+              <li><span>MOTION</span><strong lang="zh-CN">漫剧 · 电影 · 广告 · AI MTV / MV</strong></li>
+              <li><span>PUBLISH</span><strong lang="zh-CN">自媒体 · 短视频 · 图文 · 频道</strong></li>
+              <li><span>EXPLORE</span><strong lang="zh-CN">游戏 · 互动内容 · 虚拟角色 · 新形式</strong></li>
+            </ol>
+            <p>Starting points, not limits. If people, AI, or tools can help make it, it belongs in the conversation.</p>
+          </div>
+        </section>
+
         {activityOpen && <section className="draft-activity" aria-live="polite">
           <div><span>ACTIVITY DRAFT · DEMO</span><h2>Your intent now has a room.</h2><p>The next real step is inviting matched operators, recording artifacts, and completing a public receipt.</p></div>
           <div className="draft-participants">{matches.map((match) => <span key={match.node.id}>{match.node.name} / {match.node.kind}</span>)}</div>
@@ -184,7 +204,7 @@ export default function Home() {
 
         <section className="protocol">
           <div><h2>Humans enter through the room. AI enters through the same verbs.</h2><p>The browser and API share one model: list nodes, submit an intent, activate an activity, and append meaningful events.</p></div>
-          <pre><code><b>POST</b> /api/v1/intents{"\n"}{"{"}{"\n"}  &quot;summary&quot;: &quot;Create a comic-drama trailer&quot;,{"\n"}  &quot;desired_capabilities&quot;: [&quot;video.generate&quot;]{"\n"}{"}"}</code></pre>
+          <pre><code><b>POST</b> /api/v1/intents{"\n"}{"{"}{"\n"}  &quot;summary&quot;: &quot;Create an AI music video&quot;,{"\n"}  &quot;desired_capabilities&quot;: [{"\n"}    &quot;music.compose&quot;,{"\n"}    &quot;video.generate&quot;{"\n"}  ]{"\n"}{"}"}</code></pre>
         </section>
       </main>
 

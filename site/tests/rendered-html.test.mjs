@@ -22,7 +22,11 @@ test("server-renders the OpenForge public gateway", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>OpenForge — Open production for everyone<\/title>/i);
-  assert.match(html, /Bring a need\. Leave with a network\./);
+  assert.match(html, /The open network for AI-native content\./);
+  assert.match(html, /What is OpenForge\?/);
+  assert.match(html, /让每一个有想法的人，都能组织起自己的创作力量/);
+  assert.match(html, /Scripts\. Music\. Video\. Media\. Whatever comes next\./);
+  assert.match(html, /AI MTV \/ MV/);
   assert.match(html, /NETWORK REGISTRATION FIELD/);
   assert.match(html, /ACTIVITY 001/);
   assert.match(html, /One index\. Independent nodes\./);
@@ -42,6 +46,8 @@ test("ships an interactive, accessible project entrance", async () => {
   assert.match(page, /aria-live="polite"/);
   assert.match(page, /role="columnheader"/);
   assert.match(page, /lang="zh-CN"/);
+  assert.match(page, /自媒体/);
+  assert.match(page, /music\.compose/);
   assert.match(page, /No compatible node is declared/);
   assert.match(page, /match\.reasons\.join/);
   assert.match(page, /matches\.slice\(0, 5\)/);
@@ -62,6 +68,14 @@ test("mirrors the reference node's deterministic routing contract", () => {
     "audio.dub",
     "community.coordinate",
     "video.generate",
+  ]);
+  assert.deepEqual(
+    inferCapabilities("Create an AI music video with an original song"),
+    ["community.coordinate", "music.compose", "video.generate"],
+  );
+  assert.deepEqual(inferCapabilities("制作一档自媒体播客"), [
+    "community.coordinate",
+    "social.publish",
   ]);
 
   const candidates = [

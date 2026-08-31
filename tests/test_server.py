@@ -196,6 +196,9 @@ def test_server_serves_the_community_gateway(running_server) -> None:
     status, headers, body = request(running_server, "GET", "/")
     assert status == 200
     assert "OPENFORGE" in body
+    assert "What is OpenForge?" in body
+    assert "AI MTV / MV" in body
+    assert "自媒体" in body
     assert "Content-Security-Policy" in headers
 
     status, _, javascript = request(running_server, "GET", "/assets/app.js")

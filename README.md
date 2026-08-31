@@ -1,15 +1,59 @@
 # OpenForge
 
-**Open production for everyone.**
+**Open production for everyone. 让每一个有想法的人，都能组织起自己的创作力量。**
 
-Public gateway: [openforge-network.wuguomi1219.chatgpt.site](https://openforge-network.wuguomi1219.chatgpt.site)
+[进入 OpenForge](https://openforge-network.wuguomi1219.chatgpt.site) · [English overview](#english-overview)
 
-OpenForge is an open connection and activity layer for creative production. A
-real need enters the network, finds compatible people, AI agents, projects,
-channels, providers, skills, or compute, and becomes a visible activity with an
+## 让下一代内容工业，向所有人开放
+
+我们相信，下一个时代的内容工业，不应该只属于好莱坞、4A 广告公司和少数拥有预算、渠道与技术壁垒的机构。
+
+一个普通人、一位有审美判断的人、一个独立创作者、一台本地 GPU、一个 AI Agent、一套开源工作流，都应该能够围绕一个真实需求临时结成团队：一起写、一起做、一起审、一起发布，并留下每一份贡献的证据。
+
+**OpenForge 就是为此而生的开放协作网络。**
+
+它不是又一个 AI 工具商店，也不只是一套 AI 视频软件。你带来一个想法或任务，OpenForge 帮它找到可能需要的人、AI、项目、工具、算力与渠道，再把这些连接组织成一次看得见、可参与、可追踪的真实活动。
+
+```text
+一个真实需求 → 找到合适的创作力量 → 共同完成 → 公开结果与贡献
+```
+
+这里可以发生的，不只有视频：
+
+- AI 剧本、故事、分镜与世界观；
+- AI 音乐、配乐、声音、播客与虚拟歌手；
+- AI 漫剧、短剧、电影、广告与动画；
+- AI MTV / MV、视觉专辑与跨媒体作品；
+- AI 自媒体、短视频、图文、直播与频道内容；
+- AI 游戏、互动叙事、虚拟角色与数字体验；
+- AI 设计、品牌、电商内容，以及下一种还没有被命名的创作形式。
+
+只要 AI 或工具能够参与创作，它就可以进入 OpenForge 寻找合作。你不必是传统意义上的“艺术家”：提出好问题、提供审美样本、做出判断、贡献渠道、运行算力、完善工具，都是创作的一部分。
+
+我们想和社区一起证明一件事：**当创作资源可以被开放连接，每一个人都有机会组织起过去只有大型工作室才能拥有的生产能力。**
+
+### 现在就加入
+
+- **你有需求：** 提交一个真正想完成的作品或任务。
+- **你有审美：** 带来参考、判断、选择与人类反馈。
+- **你有 AI 或工具：** 声明它能做什么，用开放接口接入活动。
+- **你有算力或渠道：** 帮作品跑出来、发出去、找到受众。
+- **你在建项目：** 保留自己的仓库、许可与商业模式，作为独立节点加入网络。
+
+OpenForge 仍处在第一代。我们不会假装生态已经形成；我们会把每一次真实合作、每一个产物和每一份贡献都记录下来，从最小的可运行循环开始，把它一起做成现实。
+
+## English overview
+
+OpenForge is an open collaboration network for AI-native content. A real need
+enters the network, finds compatible people, AI agents, projects, tools,
+compute, and distribution channels, then becomes a visible activity with an
 auditable outcome.
 
-> 中文：OpenForge 不是又一个 AI 工具市场。它先把需求、项目、人、AI、渠道与算力连接起来，让社区围绕真实活动形成生产生态。
+It is not limited to video. Scripts, music, comic drama, film, advertising,
+AI music videos, self-media, podcasts, games, design, and new tool-assisted
+formats all belong—as examples, never as a closed taxonomy.
+
+> Bring a need. The network assembles.
 
 ## OpenForge V1
 

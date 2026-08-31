@@ -66,7 +66,7 @@ class OpenForgeGateway:
                 id="project.openforge",
                 name="OpenForge",
                 kind=NodeKind.PROJECT,
-                summary="Open connection and activity layer for creative production.",
+                summary="Open collaboration network for AI-native content production.",
                 capabilities=("activity.host", "community.coordinate", "network.index"),
                 status=ConnectionStatus.CONNECTED,
                 origin_url="https://github.com/zxs2010/OpenForge",
