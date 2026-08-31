@@ -4,6 +4,11 @@
 
 [进入 OpenForge](https://openforge-network.wuguomi1219.chatgpt.site) · [English overview](#english-overview)
 
+> **首批建设者招募中 / Founding Builders wanted:** 帮我们连接第一个真实
+> AI 生产节点，建设开放协议、Agent、Provider 和贡献凭证。
+> [阅读中英文招募说明](docs/call-for-builders-001.md) ·
+> [加入招募讨论](https://github.com/zxs2010/OpenForge/discussions/5)
+
 ## 让下一代内容工业，向所有人开放
 
 我们相信，下一个时代的内容工业，不应该只属于好莱坞、4A 广告公司和少数拥有预算、渠道与技术壁垒的机构。
