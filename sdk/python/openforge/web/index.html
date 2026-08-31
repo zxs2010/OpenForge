@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OpenForge connects needs, people, AI, projects, channels, providers, and compute into visible creative activities.">
+    <title>OpenForge — Open production for everyone</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <!--
+    THESIS: OpenForge is a live routing surface where a need visibly locks onto independent nodes; it refuses the slogan hero and generic dashboard.
+    OWN-WORLD: Warm uncoated paper, dense ink, registration cobalt, signal vermilion, hairline rules, proof stamps, and asymmetric job-sheet composition.
+    STORY: A visitor sees Activity 001 in motion, routes a need, inspects why nodes matched, opens an activity, or connects an independent node.
+    FIRST VIEWPORT: Masthead above three unequal columns: intent job sheet left, dominant registration routing field center, Activity 001 ledger right; the primary routing action sits under the intent.
+    FORM: Open print-room dispatch jacket, grounded direction 6, seed 3c4a9360; signature interaction is the registration-line lock when matches arrive.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
+    <a class="skip-link" href="#workbench">Skip to the routing workbench</a>
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="OpenForge home">
+        <span class="registration-mark" aria-hidden="true"></span>
+        OPENFORGE
+      </a>
+      <p>Open production for everyone.</p>
+      <nav aria-label="Primary navigation">
+        <a href="#network">Network</a>
+        <a href="#activities">Activities</a>
+        <a href="#connect">Connect</a>
+        <a href="https://github.com/zxs2010/OpenForge" rel="noreferrer">GitHub</a>
+      </nav>
+      <span class="node-state"><i aria-hidden="true"></i> Local reference node</span>
+    </header>
+
+    <main>
+      <section class="workbench" id="workbench" aria-labelledby="workbench-title">
+        <div class="intent-sheet">
+          <div class="sheet-meta">
+            <span>INTENT / OPEN</span>
+            <span>V0.1</span>
+          </div>
+          <h1 id="workbench-title">Tell the network what should happen.</h1>
+          <p class="intro-copy" lang="zh-CN">把真实需求放进来。OpenForge 会公开匹配理由，并把连接变成一个可追踪的活动。</p>
+          <form id="intent-form">
+            <label for="intent-summary">Desired outcome</label>
+            <textarea id="intent-summary" name="summary" rows="5" maxlength="2000" required>Open and validate OpenForge V1 with a real production activity</textarea>
+            <label for="intent-capabilities">Capabilities, if known</label>
+            <input id="intent-capabilities" name="capabilities" maxlength="500" value="community.coordinate" placeholder="video.generate, channel.distribute">
+            <button class="primary-action" type="submit">
+              <span>Route this intent</span>
+              <svg viewBox="0 0 28 16" aria-hidden="true"><path d="M1 8h23M18 2l6 6-6 6"/></svg>
+            </button>
+            <p class="form-status" id="intent-status" role="status" aria-live="polite">No account required on this local node.</p>
+          </form>
+        </div>
+
+        <div class="routing-field" id="routing-field">
+          <div class="routing-head">
+            <h2>Network registration field</h2>
+            <span id="network-total">Loading nodes…</span>
+          </div>
+          <div class="routing-stage" aria-live="polite">
+            <svg class="route-lines" viewBox="0 0 720 560" preserveAspectRatio="none" aria-hidden="true">
+              <path class="route-trunk" d="M26 280 C150 280 162 280 242 280"/>
+              <path class="route-path path-1" d="M242 280 C340 280 332 78 446 78 H690"/>
+              <path class="route-path path-2" d="M242 280 C350 280 340 158 446 158 H690"/>
+              <path class="route-path path-3" d="M242 280 H690"/>
+              <path class="route-path path-4" d="M242 280 C350 280 340 402 446 402 H690"/>
+              <path class="route-path path-5" d="M242 280 C340 280 332 482 446 482 H690"/>
+              <circle cx="242" cy="280" r="8"/>
+            </svg>
+            <div class="intent-token" aria-hidden="true"><span>INTENT</span></div>
+            <ol class="routing-nodes" id="routing-nodes"></ol>
+            <div class="routing-empty" id="routing-empty">
+              <strong>Ready to route</strong>
+              <span>Submit an outcome to illuminate compatible nodes.</span>
+            </div>
+          </div>
+          <div class="match-result" id="match-result" hidden>
+            <div>
+              <span id="match-count">0 matches</span>
+              <p id="match-explanation">Declared capabilities determine the route.</p>
+            </div>
+            <button type="button" id="activate-intent">Open an activity</button>
+          </div>
+        </div>
+
+        <aside class="activity-ledger" aria-labelledby="activity-001-title">
+          <div class="ledger-head">
+            <span>ACTIVITY 001</span>
+            <span class="stamp" id="activity-001-state">active</span>
+          </div>
+          <h2 id="activity-001-title">Open and validate OpenForge V1</h2>
+          <p>The network's first activity is building the network itself. This is a live project record, not a success claim.</p>
+          <dl class="ledger-stats">
+            <div><dt>Participants</dt><dd id="activity-001-participants">—</dd></div>
+            <div><dt>Events</dt><dd id="activity-001-events">—</dd></div>
+          </dl>
+          <ol class="event-preview" id="activity-001-timeline"></ol>
+          <button class="text-action" type="button" data-open-activity="activity:001">Open activity room <span aria-hidden="true">→</span></button>
+        </aside>
+      </section>
+
+      <section class="network-section" id="network" aria-labelledby="network-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="network-title">One index. Independent nodes.</h2>
+            <p>Imported means discovered. Connected means an adapter or working interface exists. The distinction is part of the product.</p>
+          </div>
+          <div class="network-counts" id="network-counts" aria-label="Network counts"></div>
+        </div>
+        <div class="filter-bar" id="node-filters" role="group" aria-label="Filter network by node kind">
+          <button type="button" aria-pressed="true" data-kind="all">All nodes</button>
+          <button type="button" aria-pressed="false" data-kind="human">People</button>
+          <button type="button" aria-pressed="false" data-kind="ai">AI</button>
+          <button type="button" aria-pressed="false" data-kind="project">Projects</button>
+          <button type="button" aria-pressed="false" data-kind="provider">Providers</button>
+          <button type="button" aria-pressed="false" data-kind="channel">Channels</button>
+        </div>
+        <div class="node-table" role="table" aria-label="OpenForge network index">
+          <div class="node-row node-row-head" role="row">
+            <span role="columnheader">Node</span><span role="columnheader">Kind</span><span role="columnheader">Capabilities</span><span role="columnheader">Connection</span>
+          </div>
+          <div id="node-list"></div>
+        </div>
+      </section>
+
+      <section class="activity-section" id="activities" aria-labelledby="activities-title">
+        <div class="activity-index">
+          <div class="section-heading compact">
+            <div>
+              <h2 id="activities-title">Activities are where the ecology happens.</h2>
+              <p>A need becomes shared work. Jobs, artifacts, review, and distribution can join without becoming the whole platform.</p>
+            </div>
+          </div>
+          <div id="activity-list" class="activity-list"></div>
+        </div>
+        <div class="activity-room" id="activity-room" aria-live="polite">
+          <p class="room-placeholder">Choose an activity to inspect its participants and public timeline.</p>
+        </div>
+      </section>
+
+      <section class="connect-section" id="connect" aria-labelledby="connect-title">
+        <div class="connect-statement">
+          <h2 id="connect-title">Keep your repository. Join the network.</h2>
+          <p>Your AI system, project, channel, compute service, or human practice stays independent. Register what it can contribute now; a connector can deepen the relationship later.</p>
+          <div class="connection-key" aria-label="Connection status definitions">
+            <span><i class="status-dot imported"></i> Imported — publicly discovered</span>
+            <span><i class="status-dot claimed"></i> Claimed — submitted by an operator</span>
+            <span><i class="status-dot connected"></i> Connected — working interface</span>
+            <span><i class="status-dot verified"></i> Verified — evidence reviewed</span>
+          </div>
+        </div>
+        <form class="connect-form" id="node-form">
+          <div class="sheet-meta"><span>NODE / CLAIM</span><span>PUBLIC RECORD</span></div>
+          <label for="node-name">Name</label>
+          <input id="node-name" name="name" required maxlength="120" placeholder="Your project or system">
+          <label for="node-kind">Node kind</label>
+          <select id="node-kind" name="kind">
+            <option value="human">Human</option>
+            <option value="ai">AI agent</option>
+            <option value="project">Project</option>
+            <option value="skill">Skill</option>
+            <option value="provider" selected>Provider</option>
+            <option value="compute">Compute</option>
+            <option value="channel">Channel</option>
+          </select>
+          <label for="node-summary">What can it contribute?</label>
+          <textarea id="node-summary" name="summary" rows="3" required maxlength="2000" placeholder="Describe the capability and operating boundary."></textarea>
+          <label for="node-capabilities">Capability labels</label>
+          <input id="node-capabilities" name="capabilities" maxlength="500" placeholder="video.generate, script.write">
+          <label for="node-url">Public URL, optional</label>
+          <input id="node-url" name="origin_url" type="url" maxlength="2048" placeholder="https://github.com/owner/project">
+          <button type="submit">Claim this node</button>
+          <p class="form-status" id="node-status" role="status" aria-live="polite">Claims are visible; verification is a separate evidence step.</p>
+        </form>
+      </section>
+
+      <section class="protocol-section" aria-labelledby="protocol-title">
+        <div>
+          <h2 id="protocol-title">Humans enter through the room. AI enters through the same verbs.</h2>
+          <p>The browser and API share one model: list nodes, submit an intent, activate an activity, and append meaningful events. No private marketplace contract is required.</p>
+        </div>
+        <pre aria-label="OpenForge API example"><code><span>POST</span> /api/v1/intents
+{
+  "summary": "Create a 15-second comic-drama trailer",
+  "desired_capabilities": ["video.generate"]
+}</code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark" href="/">OPENFORGE</a>
+      <p>Apache-2.0 · Protocol v0.1 · Reference node v0.1.0</p>
+      <a href="https://github.com/zxs2010/OpenForge" rel="noreferrer">Read the source</a>
+    </footer>
+  </body>
+</html>

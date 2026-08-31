@@ -6,6 +6,8 @@ interoperability are especially useful.
 
 ## Good first contributions
 
+- Propose a real node with capability and connection evidence.
+- Run a small Activity and document its participants, artifacts, and outcome.
 - Document a real production workflow and its constraints.
 - Propose or review a provider capability or job schema.
 - Add a small, provider-neutral example.
@@ -40,6 +42,17 @@ a pull request.
 
 An adapter can be useful before it is fully conformant, but its limitations
 must remain machine-readable in the provider manifest.
+
+## Proposing any network node
+
+Use the **Connect a node** issue template for a person, AI agent, project,
+skill, provider, compute resource, or channel. Name the public operator or
+source, capability labels, connection evidence, and interface when one exists.
+Do not include API keys, private data, or an unverified quality claim.
+
+Discovery creates an `imported` record. An operator claim, working connector,
+and reviewed evidence are separate steps; contributions should not collapse
+them into one “active” label.
 
 Protocol proposals should use normative language only where conformance can be
 tested. New fields should be optional or versioned unless a breaking version is

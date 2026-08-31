@@ -1,105 +1,107 @@
 # OpenForge Vision
 
-## The idea
+## The purpose
 
-Creative production is becoming a networked activity. A single request may
-need a writer, a visual skill, an agent, a model API, local GPU capacity, human
-review, and a delivery system. Today those parts are commonly bound together in
-closed products or one-off integrations.
+Film, advertising, media, and digital production are becoming networked, but
+the ability to organize that production is still concentrated in closed
+platforms and large intermediaries. A single outcome may need a person with
+taste, an AI agent, a production project, a model API, local GPU capacity,
+human review, and a distribution channel. Today these pieces are hard to
+discover together and usually bound by one operator's product and economics.
 
-OpenForge aims to make the coordination layer open.
+OpenForge makes the connection layer open.
 
-The project defines shared contracts for describing work, selecting compatible
-capabilities, dispatching jobs, tracking state, returning artifacts, and
-recording provenance and cost. Implementations remain free to compete on user
-experience, routing, quality, models, infrastructure, and business models.
+The long-term ambition is to let small teams and communities organize work at a
+level previously available mainly to Hollywood studios, major advertising
+groups, and large platforms—without replacing one monopoly with another.
 
-## What we are building
+## The core business logic
 
-OpenForge is intended to become:
+OpenForge begins with traffic in its useful sense: real intent flowing between
+independent participants.
 
-1. An open protocol for production jobs, capabilities, and receipts.
-2. Provider interfaces that prevent orchestration from depending on one vendor.
-3. Registries for reusable skills, agents, and production providers.
-4. Reference SDKs and a CLI for building and testing interoperable systems.
-5. A community where humans and AI systems can contribute production capacity.
+```text
+Need → compatible nodes → shared activity → artifact/outcome → public receipt
+```
 
-OpenForge is not intended to be a single model, a single video application, a
-marketplace controlled by one operator, or a promise that all creative work can
-be automated.
+The platform does not begin by deciding whether the community should have a
+Skill market, Agent market, compute market, or another institution. Those can
+be started by participants after the underlying network has enough real
+activity to justify them.
+
+## What the network connects
+
+- people, including ordinary people with useful judgment or taste;
+- AI agents and autonomous systems;
+- independent projects and open-source production tools;
+- reusable skills and aesthetic samples;
+- production providers and model APIs;
+- local and hosted compute;
+- publishing, sales, and distribution channels;
+- requests, artifacts, reviews, costs, and outcomes.
+
+A node can remain in its own repository and under its own license, interface,
+and business model.
+
+## V1: prove the smallest ecology
+
+The first release is not a marketplace. It is a reference node that can:
+
+1. index independent nodes with honest connection evidence;
+2. accept a need from a human or AI;
+3. return explainable capability matches;
+4. activate the need as a community Activity;
+5. record participants, progress, artifacts, review, and outcomes;
+6. dispatch portable production Jobs when a provider is involved.
+
+Activity 001 is the development and opening of OpenForge itself. The founder's
+independently hosted AI comic-drama system will become the first external
+production proof through the same connector boundary available to any other
+project.
 
 ## Design principles
 
+### Connection before inventory
+
+People arrive with different needs. The experience starts with an outcome and
+shows the network working, rather than presenting a shelf of tools.
+
 ### Open interfaces
 
-Core contracts should be implementable without permission from a central
-operator. Protocol text, schemas, and conformance fixtures should be public.
+Humans use the community room; AI systems use versioned machine contracts. Core
+verbs and records remain publicly implementable.
 
-### Replaceable providers
+### Honest evidence
 
-Routers depend on declared capabilities, not vendor-specific behavior. A local
-workflow, a hosted API, and a human production team can all be providers.
+`imported`, `claimed`, `connected`, and `verified` mean different things. The
+product never turns a GitHub link into an integration claim.
 
-### Verifiable production
+### Independent execution
 
-Every completed job should be able to return its inputs, outputs, state history,
-provenance, usage, and price at an appropriate level of disclosure.
+OpenForge coordinates work but does not require providers, projects, or
+channels to merge into one codebase or give up their identity.
 
 ### Human agency
 
-People must be able to set constraints, approve consequential actions, review
-results, and stop work. Automation should make responsibility clearer, not
-erase it.
+People can set constraints, review consequential actions, stop work, and
+contribute aesthetic judgment. Automation makes responsibility more legible;
+it does not erase it.
 
-### Composable capabilities
+### Auditable activity
 
-Small skills and agents should be reusable across workflows. Composition must
-preserve version information and make failures attributable.
+An Activity should expose its purpose, participants, meaningful events,
+artifacts, and outcome. A Receipt records what happened and what was consumed;
+it is not automatically a payment.
 
 ### Progressive decentralization
 
-The first implementation may use a simple registry and router. The contracts
-should not require one permanent registry, marketplace, or settlement operator.
-
-### Sustainable participation
-
-Cost and contribution records should make fair compensation possible without
-requiring the protocol to choose a single currency or payment rail.
-
-## First reference use case: AI video
-
-The initial demonstration will connect an existing AI video production system
-as the first provider. A request such as “create a 15-second product video” can
-be decomposed, routed, produced, reviewed, and returned with a usage receipt.
-
-This use case is demanding enough to exercise asynchronous jobs, multiple
-artifacts, model and compute choices, human review, cancellation, partial
-failure, and cost reconciliation. It is a reference use case, not the boundary
-of the project.
-
-## Participants
-
-- **Requesters** define desired outcomes and constraints.
-- **Routers** match work with capabilities and policies.
-- **Providers** execute production work.
-- **Skill authors** publish reusable transformations or expertise.
-- **Agent authors** publish planning and execution participants.
-- **Reviewers** approve, reject, or improve outputs.
-- **Registry operators** help participants discover compatible components.
-
-A participant can hold more than one role.
-
-## Near-term milestones
-
-- Validate Protocol v0.1 against one real video provider and one mock provider.
-- Publish machine-readable schemas and conformance fixtures.
-- Build a minimal SDK and CLI that submit and inspect jobs.
-- Capture estimates and final receipts with explainable variance.
-- Document human-review and cancellation paths.
-- Use implementation evidence to revise the protocol before declaring stability.
+The first node uses a simple index and router. The protocol does not require
+one permanent registry, marketplace, or settlement operator.
 
 ## Success
 
-OpenForge succeeds when a requester can move a production job between
-independent providers with predictable behavior, understand what happened and
-what it cost, and retain meaningful control over the work and its artifacts.
+OpenForge succeeds first when its own small team can repeatedly complete real
+work through the loop and show the evidence. It succeeds as an ecosystem when
+independent nodes begin bringing one another qualified needs, capabilities,
+distribution, and results such that each new useful connection makes the
+network more valuable.

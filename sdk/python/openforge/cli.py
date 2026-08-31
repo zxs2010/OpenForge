@@ -10,8 +10,11 @@ from pathlib import Path
 from uuid import uuid4
 
 from openforge.catalog import ProviderCatalog
+from openforge.gateway import OpenForgeGateway
 from openforge.models import JobInput, JobRequest, OpenForgeError
 from openforge.providers.moneyprinter_turbo import MoneyPrinterTurboProvider
+from openforge.server import serve
+from openforge.store import SQLiteNetworkStore
 
 
 def _default_catalog_path() -> Path:
@@ -60,6 +63,20 @@ def _build_parser() -> argparse.ArgumentParser:
         job_command = job_commands.add_parser(name, help=f"{name} a production job")
         _add_provider_connection_arguments(job_command)
         job_command.add_argument("--job-id", required=True)
+
+    serve_command = commands.add_parser("serve", help="run the OpenForge V1 reference node")
+    serve_command.add_argument(
+        "--host",
+        default="127.0.0.1",
+        help="address to bind; keep the default unless a trusted proxy protects the node",
+    )
+    serve_command.add_argument("--port", type=_port, default=8787)
+    serve_command.add_argument(
+        "--database",
+        type=Path,
+        default=Path(".openforge/openforge.db"),
+        help="SQLite database path",
+    )
     return parser
 
 
@@ -69,6 +86,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         if args.command == "providers":
             return _run_provider_command(args)
+        if args.command == "serve":
+            gateway = OpenForgeGateway(
+                SQLiteNetworkStore(args.database),
+                catalog_path=args.catalog,
+            )
+            gateway.seed()
+            serve(args.host, args.port, gateway)
+            return 0
         return _run_job_command(args)
     except (OpenForgeError, ValueError) as exc:
         print(f"openforge: {exc}", file=sys.stderr)
@@ -200,3 +225,13 @@ def _duration(value: str) -> int:
     if not 1 <= duration <= 3_600:
         raise argparse.ArgumentTypeError("duration must be between 1 and 3600")
     return duration
+
+
+def _port(value: str) -> int:
+    try:
+        port = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("port must be an integer") from exc
+    if not 0 <= port <= 65_535:
+        raise argparse.ArgumentTypeError("port must be between 0 and 65535")
+    return port

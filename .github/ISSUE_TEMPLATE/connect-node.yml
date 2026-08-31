@@ -1,0 +1,69 @@
+name: Connect a node
+description: Propose a person, AI, project, skill, provider, compute resource, or channel for the OpenForge network.
+title: "[Node]: "
+labels: ["node-proposal"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Node kind
+      options:
+        - Human
+        - AI agent
+        - Project
+        - Skill
+        - Provider
+        - Compute
+        - Channel
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Public name
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Contribution
+      description: What outcome can this node help produce, and under what boundary?
+    validations:
+      required: true
+  - type: input
+    id: capabilities
+    attributes:
+      label: Capability labels
+      placeholder: video.generate, channel.distribute
+    validations:
+      required: true
+  - type: input
+    id: origin
+    attributes:
+      label: Public URL or repository
+      placeholder: https://github.com/owner/project
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Current connection evidence
+      options:
+        - Imported / public information only
+        - Claimed / I operate or represent this node
+        - Connected / a working interface exists
+        - Verified / evidence is ready for community review
+    validations:
+      required: true
+  - type: textarea
+    id: interface
+    attributes:
+      label: Interface and evidence
+      description: Link API docs, a manifest, a reproducible demo, or other evidence. Do not paste secrets.
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Community agreement
+      options:
+        - label: I will follow the OpenForge Code of Conduct and will not include credentials or private data.
+          required: true

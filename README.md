@@ -2,120 +2,159 @@
 
 **Open production for everyone.**
 
-OpenForge is an open protocol and reference platform for coordinating people,
-AI agents, reusable skills, production providers, and compute into auditable
-creative workflows.
+Public gateway: [openforge-network.wuguomi1219.chatgpt.site](https://openforge-network.wuguomi1219.chatgpt.site)
 
-The first reference use case is AI-assisted video production. The protocol is
-intentionally media-agnostic so the same foundation can later support audio,
-design, games, software, and other production work.
+OpenForge is an open connection and activity layer for creative production. A
+real need enters the network, finds compatible people, AI agents, projects,
+channels, providers, skills, or compute, and becomes a visible activity with an
+auditable outcome.
 
-> 中文简介：OpenForge 希望把人、AI Agent、Skill、生产服务与算力组织成一个开放、可替换、可审计的生产网络。
+> 中文：OpenForge 不是又一个 AI 工具市场。它先把需求、项目、人、AI、渠道与算力连接起来，让社区围绕真实活动形成生产生态。
 
-## Project status
+## OpenForge V1
 
-OpenForge is **pre-alpha**. The repository currently defines the vision, the
-first protocol draft, a dependency-free Python SDK, a machine-readable community
-provider catalog, and the first runnable adapter. No API should be considered
-stable yet.
+The first generation is runnable now. It includes:
 
-## How it fits together
+- a browser gateway for people;
+- a versioned HTTP API for AI and external systems;
+- a SQLite network index with honest connection states;
+- explainable intent-to-capability matching;
+- Activity Rooms with participants and append-only progress events;
+- a provider-neutral job SDK and the first real video adapter;
+- a public gateway under `site/` and a structured GitHub node-proposal flow.
 
-```text
-Production request
-        |
-        v
-Production Router ----> Skills / Agents
-        |
-        v
-Provider Interface
-        |----> AI video system
-        |----> ComfyUI or local GPU workflow
-        |----> Third-party production API
-        `----> Future providers
-        |
-        v
-Result + provenance + usage receipt + human review
-```
+Activity 001 is OpenForge opening and validating OpenForge itself. It is seeded
+as a real activity record rather than presented as proof of network effects.
 
-OpenForge separates orchestration from execution. A production system connects
-through a provider adapter instead of becoming a permanent dependency of the
-network.
+## Run the complete local node
 
-## Core concepts
-
-- **Job** — a versioned request with inputs, constraints, and lifecycle state.
-- **Provider** — an adapter that estimates, accepts, tracks, cancels, and returns
-  production work.
-- **Skill** — a reusable capability with declared inputs and outputs.
-- **Agent** — an autonomous or human-supervised participant that plans or acts.
-- **Receipt** — an auditable record of usage, price, provenance, and result.
-
-Read [the vision](docs/vision.md) for the product direction and
-[Protocol v0.1](docs/protocol-v0.1.md) for the first interoperability draft. The
-[community validation plan](docs/community-validation.md) explains how existing
-open-source projects become providers without being copied into the core.
-
-## Try the community catalog
-
-Python 3.10 or newer is required.
+Python 3.10 or newer is required. The runtime has no third-party dependencies.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-openforge providers list
-openforge providers inspect moneyprinter-turbo
+openforge serve
 ```
 
-The first catalog contains MoneyPrinterTurbo, OpenMontage, ComfyUI, and
-VideoLingo. Entries pin an upstream release or immutable commit and record the
-license and current adapter status.
+Then open [http://127.0.0.1:8787](http://127.0.0.1:8787).
 
-## Run the first real adapter
+The default server binds only to your computer and stores state in
+`.openforge/openforge.db`. Put authentication and a trusted reverse proxy in
+front of it before exposing write operations to the internet.
 
-Start a separately installed MoneyPrinterTurbo v1.3.5 API service, then submit
-the same provider-neutral request through OpenForge:
+## The first loop
+
+```text
+Connector → Network Index → Intent Router → Activity → Receipt
+```
+
+1. A **Node** declares what it can contribute and shows its current connection
+   evidence.
+2. An **Intent** describes the desired outcome in plain language and optional
+   capability labels.
+3. A **Match** explains which declared capabilities align; it does not silently
+   assign work.
+4. Activating the intent opens an **Activity** with participants and a public
+   timeline.
+5. Provider **Jobs**, artifacts, review, distribution, and receipts can join the
+   activity without becoming the platform's only purpose.
+
+The product vocabulary is defined in [CONTEXT.md](CONTEXT.md), the product
+commitments in [PRODUCT.md](PRODUCT.md), and the V1 gateway contract in
+[docs/gateway-v0.1.md](docs/gateway-v0.1.md).
+
+## Connect an independent project
+
+Your system does not need to live in this repository. Start by proposing a node
+through the GitHub issue template or call the local API:
 
 ```bash
+curl -X POST http://127.0.0.1:8787/api/v1/nodes \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "Independent Comic Drama System",
+    "kind": "provider",
+    "summary": "Produces AI comic-drama video from a structured brief.",
+    "capabilities": ["video.generate", "comic-drama.produce"],
+    "origin_url": "https://github.com/owner/project"
+  }'
+```
+
+This creates a `claimed` node. A working connector can later move it to
+`connected`; community-reviewed evidence can move it to `verified`. OpenForge
+never labels a discovered repository as integrated without evidence.
+
+## Provider jobs remain portable
+
+The existing production-provider layer remains part of V1:
+
+```bash
+openforge providers list
+openforge providers inspect moneyprinter-turbo
+
 openforge jobs create \
   --provider moneyprinter-turbo \
   --request-id community-demo-001 \
   --brief "Create a 15-second vertical product launch video" \
   --aspect-ratio 9:16 \
-  --duration 15 \
-  --language zh-CN
+  --duration 15
 ```
 
-Use the returned task ID to inspect state and retrieve the final artifact:
+MoneyPrinterTurbo is adapter-ready. OpenMontage, ComfyUI, and VideoLingo are
+indexed as candidates until their connector operations pass tests. See
+[Protocol v0.1](docs/protocol-v0.1.md) for the provider-job contract.
 
-```bash
-openforge jobs status --provider moneyprinter-turbo --job-id TASK_ID
-openforge jobs result --provider moneyprinter-turbo --job-id TASK_ID
+## Architecture
+
+```text
+Human browser ─┐
+               ├─> OpenForge Gateway ─> Network Index (SQLite)
+AI / API ──────┘          │                    │
+                          └─> Intent Router ───┘
+                                      │
+                                      v
+                                Activity Room
+                                      │
+                         Jobs / artifacts / review
+                                      │
+                                      v
+                                   Receipt
 ```
 
-The upstream API key, when enabled, is read only from the
-`MONEYPRINTER_TURBO_API_KEY` environment variable.
+The Python reference node is deliberately small and inspectable. External
+systems connect through manifests and adapters instead of becoming hard-coded
+dependencies.
 
 ## Repository map
 
 ```text
-agents/       Agent adapters and manifests
-cli/          Command-line client
-docs/         Vision, protocol, and design documents
-examples/     End-to-end examples
-providers/    Production-provider adapters
-sdk/          SDKs and shared protocol types
-skills/       Reusable production skills and manifests
-tests/        Contract, adapter, CLI, and security behavior tests
+sdk/python/openforge/  Domain, persistence, router, API server, provider SDK
+sdk/python/openforge/web/  Complete local community gateway
+site/                  Public, read-safe project entrance
+providers/             Independent provider manifests and adapters
+docs/                  Vision and protocol documents
+tests/                 Domain, API, CLI, adapter, and conformance tests
+skills/ agents/        Future community-owned node categories
+examples/              End-to-end examples
 ```
+
+## What V1 intentionally does not do
+
+- no token or blockchain settlement;
+- no automatic payment or reputation score;
+- no centrally curated Skill or Agent marketplace;
+- no claim that imported projects are connected;
+- no anonymous public mutation of the hosted project entrance.
+
+Those choices keep the first validation focused: can we complete real work
+through an open connection loop?
 
 ## Contributing
 
-OpenForge is at the stage where clear use cases and small, testable protocol
-proposals are especially valuable. Start with [CONTRIBUTING.md](CONTRIBUTING.md)
-and follow the [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## License
+Start with [CONTRIBUTING.md](CONTRIBUTING.md) and follow the
+[Code of Conduct](CODE_OF_CONDUCT.md). Node proposals, real-world activities,
+connector evidence, and small testable protocol improvements are especially
+valuable now.
 
 Licensed under the [Apache License 2.0](LICENSE).

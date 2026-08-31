@@ -4,6 +4,11 @@
 **Stability:** Experimental; breaking changes are expected
 **Scope:** Provider interoperability and auditable asynchronous jobs
 
+This Job protocol is the execution layer inside the broader
+[Gateway v0.1](gateway-v0.1.md) flow. An Intent may become an Activity involving
+several nodes; a Job is one versioned request from that Activity to one
+production provider.
+
 ## 1. Purpose
 
 This document defines the minimum contract between an OpenForge production
