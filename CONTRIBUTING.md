@@ -11,6 +11,11 @@ counts. It does not promise equity, Tokens, employment, guaranteed work, or
 future revenue. Use the **Founding Contributor application** Issue template
 after reading the full program.
 
+OpenForge V1 deliberately uses open protocols, append-only events, hashes, and
+signatures instead of a Token or blockchain dependency. Read
+[Verifiable Without Blockchain v0.1](docs/verifiable-without-blockchain-v0.1.md)
+for the public technical position and the contribution areas it opens.
+
 ## Good first contributions
 
 - Propose a real node with capability and connection evidence.

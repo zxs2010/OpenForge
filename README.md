@@ -185,7 +185,8 @@ examples/              End-to-end examples
 
 ## What V1 intentionally does not do
 
-- no token or blockchain settlement;
+- no token or blockchain settlement—see
+  [Verifiable Without Blockchain v0.1](docs/verifiable-without-blockchain-v0.1.md);
 - no automatic payment or reputation score;
 - no centrally curated Skill or Agent marketplace;
 - no claim that imported projects are connected;
