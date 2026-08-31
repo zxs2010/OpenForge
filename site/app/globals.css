@@ -27,7 +27,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .skip-link { position: fixed; z-index: 20; top: 8px; left: 8px; padding: 10px 14px; background: var(--ink); color: white; transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
 
-.masthead { width: var(--page); min-height: 72px; margin: auto; display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 30px; border-bottom: 1px solid var(--ink); }
+.masthead { width: var(--page); min-height: 72px; margin: auto; display: grid; grid-template-columns: auto 1fr auto auto auto; align-items: center; gap: 22px; border-bottom: 1px solid var(--ink); }
 .wordmark { display: inline-flex; align-items: center; gap: 12px; font-size: .82rem; font-weight: 850; letter-spacing: .12em; text-decoration: none; }
 .registration-mark { position: relative; width: 19px; height: 19px; border: 1px solid currentColor; border-radius: 50%; }
 .registration-mark::before, .registration-mark::after { content: ""; position: absolute; background: currentColor; }
@@ -37,6 +37,11 @@ button, input, textarea { font: inherit; color: inherit; }
 .masthead nav { display: flex; gap: 22px; }
 .masthead nav a, .source-link { font-size: .73rem; font-weight: 750; text-decoration: none; }
 .masthead a:hover { text-decoration: underline; }
+.language-switch { display: flex; border: 1px solid var(--ink); }
+.language-switch button { min-width: 42px; min-height: 30px; padding: 5px 8px; border: 0; background: transparent; font-size: .68rem; font-weight: 800; cursor: pointer; }
+.language-switch button + button { border-left: 1px solid var(--ink); }
+.language-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper-light); }
+.language-switch button:hover:not([aria-pressed="true"]) { background: var(--yellow); }
 
 .workbench { width: var(--page); min-height: 720px; margin: auto; display: grid; grid-template-columns: minmax(250px,.84fr) minmax(430px,1.38fr) minmax(250px,.84fr); border-bottom: 1px solid var(--ink); }
 .intent-sheet, .routing-field, .ledger { min-width: 0; }
@@ -158,7 +163,7 @@ footer p { color: var(--muted); font-size: .72rem; }
 
 @media (max-width: 1160px) {
   :root { --page: min(100% - 36px,1100px); }
-  .masthead { grid-template-columns: auto 1fr auto; }.masthead > p { display: none; }
+  .masthead { grid-template-columns: auto 1fr auto auto; }.masthead > p { display: none; }
   .workbench { grid-template-columns: minmax(290px,.8fr) minmax(490px,1.2fr); }
   .ledger { grid-column: 1/-1; padding: 46px; }
   .draft-activity { grid-template-columns: 1fr 1fr; }.draft-activity > a { grid-column: 1/-1; }
@@ -166,7 +171,7 @@ footer p { color: var(--muted); font-size: .72rem; }
 
 @media (max-width: 820px) {
   :root { --page: min(100% - 28px,760px); }
-  .masthead { grid-template-columns: 1fr auto; }.masthead nav { display: none; }.source-link { font-size: .68rem; }
+  .masthead { grid-template-columns: 1fr auto auto; }.masthead nav { display: none; }.source-link { font-size: .68rem; }
   .workbench { display: block; }.intent-sheet { padding: 54px 0 48px; }.routing-field { margin: 0; }.ledger { margin-top: 18px; padding: 38px 26px; }
   .draft-activity { grid-template-columns: 1fr; }.draft-activity > a { grid-column: auto; }
   .manifesto { grid-template-columns: 1fr; gap: 60px; padding: 82px 0; }
@@ -178,6 +183,8 @@ footer p { color: var(--muted); font-size: .72rem; }
 
 @media (max-width: 520px) {
   :root { --page: calc(100% - 22px); }
+  .source-link { font-size: 0; }
+  .source-link::after { content: "GitHub"; font-size: .68rem; }
   h1 { font-size: clamp(3rem,14vw,4.4rem); }.routing-field, .ledger { margin-inline: -11px; }.routing-field { padding: 22px; }
   .route-stage { min-height: 440px; }.route-nodes { width: 48%; }.intent-token { width: 58px; }.ready { left: 61px; max-width: 132px; }
   .draft-activity { width: 100%; margin-top: 12px; padding: 28px 22px; }
