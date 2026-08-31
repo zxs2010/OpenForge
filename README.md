@@ -9,6 +9,11 @@
 > [阅读中英文招募说明](docs/call-for-builders-001.md) ·
 > [加入招募讨论](https://github.com/zxs2010/OpenForge/discussions/5)
 
+> **公开验证进行中 / Active validation:** 2026-09-01，第二个真实项目已进入
+> 需求确认阶段，并与 OpenForge 建立首个跨项目、脱敏的节点握手。它会用真实的
+> 里程碑、阻塞和接口决策检验协议，而不是把一次演示当成生态成立。
+> [查看公开验证日志](docs/active-validation.md)
+
 ## 让下一代内容工业，向所有人开放
 
 我们相信，下一个时代的内容工业，不应该只属于好莱坞、4A 广告公司和少数拥有预算、渠道与技术壁垒的机构。
@@ -74,6 +79,11 @@ The first generation is runnable now. It includes:
 
 Activity 001 is OpenForge opening and validating OpenForge itself. It is seeded
 as a real activity record rather than presented as proof of network effects.
+
+The next real-world validation is now active: an independent creative-work
+coordination project has established an internal, privacy-preserving handshake
+with OpenForge. Its public status, evidence, limits, and next gates are tracked
+in the [active validation log](docs/active-validation.md).
 
 ## Run the complete local node
 

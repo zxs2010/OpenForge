@@ -71,6 +71,13 @@ independently hosted AI comic-drama system will become the first external
 production proof through the same connector boundary available to any other
 project.
 
+OpenForge also validates the broader human collaboration model through an
+independent creative-work coordination project. The project remains separate
+and private while milestone, blocker, and interface-impact updates are shared
+through a sanitized node handshake. Evidence and limits are published in the
+[active validation log](active-validation.md); this experiment is not yet a
+claim of a stable public protocol or a connected production node.
+
 ## Design principles
 
 ### Connection before inventory
