@@ -4,6 +4,13 @@ Thank you for helping build an open production network. OpenForge is in an
 early design phase, so contributions that clarify real workflows and improve
 interoperability are especially useful.
 
+Early substantial contributions may qualify for the
+[Founding Contributor Program v0.1](docs/founding-contributor-program-v0.1.md).
+Recognition is based on accepted, verifiable outcomes rather than contribution
+counts. It does not promise equity, Tokens, employment, guaranteed work, or
+future revenue. Use the **Founding Contributor application** Issue template
+after reading the full program.
+
 ## Good first contributions
 
 - Propose a real node with capability and connection evidence.

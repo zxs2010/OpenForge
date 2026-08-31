@@ -201,4 +201,14 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md) and follow the
 connector evidence, and small testable protocol improvements are especially
 valuable now.
 
+Substantial early contributions may be recognized through the
+[OpenForge Founding Contributor Program v0.1](docs/founding-contributor-program-v0.1.md).
+The program provides permanent evidence-based attribution, a documented
+Contributor → Reviewer → Maintainer path, funded bounties only when money is
+confirmed, and separately agreed compensation for real Activities. It does not
+promise equity, Tokens, employment, guaranteed work, or future platform income.
+
+See the public [Founding Contributors Ledger](FOUNDING_CONTRIBUTORS.md) or apply
+with the repository's **Founding Contributor application** Issue template.
+
 Licensed under the [Apache License 2.0](LICENSE).

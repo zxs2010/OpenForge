@@ -1,0 +1,71 @@
+name: Founding Contributor application
+description: Apply for OpenForge Founding Contributor recognition with public, verifiable evidence.
+title: "[Founding Contributor]: "
+labels: ["founding-contributor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping build OpenForge. Read the [Founding Contributor Program v0.1](https://github.com/zxs2010/OpenForge/blob/main/docs/founding-contributor-program-v0.1.md) before applying. Do not include secrets, private-repository content, customer data, contracts, pricing, internal prompts, or undisclosed vulnerabilities.
+  - type: input
+    id: identity
+    attributes:
+      label: Public identity
+      description: GitHub account, public name, or pseudonym to record in the ledger.
+    validations:
+      required: true
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Primary contribution type
+      options:
+        - Provider / Agent / Skill adapter
+        - Protocol / API / RFC
+        - Todo Bridge / Activity / Job implementation
+        - Security / privacy / reliability
+        - Testing / release verification
+        - Documentation / internationalization / design
+        - Node connection / real workflow validation
+        - Review / mentoring / community maintenance
+        - Other substantial contribution
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Accepted outcome
+      description: Explain what changed and why the contribution is useful to OpenForge.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Link the relevant PR, Issue, Discussion, Activity, Artifact, release, or other authorized public record.
+    validations:
+      required: true
+  - type: textarea
+    id: responsibility
+    attributes:
+      label: Your responsibility
+      description: Describe the part you completed or maintained. Credit collaborators accurately.
+    validations:
+      required: true
+  - type: textarea
+    id: ai_use
+    attributes:
+      label: AI and third-party tool disclosure
+      description: Name material AI or third-party assistance, or write “None”. You remain responsible for correctness, licensing, privacy, and security.
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Community agreement
+      options:
+        - label: I have read and will follow the Founding Contributor Program and Code of Conduct.
+          required: true
+        - label: I am authorized to publish the evidence above and it contains no secrets or private data.
+          required: true
+        - label: I understand this recognition is not equity, a Token, employment, guaranteed work, or future revenue.
+          required: true
